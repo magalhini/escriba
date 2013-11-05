@@ -1,0 +1,29 @@
+/* Dark theme */
+
+body.dark {
+    background: #29292A;
+}
+
+.dark .editable,
+.dark .title {
+    color: #f1f1f1;
+}
+
+.dark .options .about:hover {
+    color: #fff;
+}
+
+.dark .options {
+    background: #333;
+    border-bottom: #000;
+    color: #f1f1f1;
+}
+
+.dark .writing:after {
+    background: linear-gradient(to bottom, transparent, #29292A);
+}
+
+.dark .options li:hover,
+.dark .options .selected {
+    color: #fff;
+}

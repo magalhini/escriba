@@ -1,0 +1,83 @@
+<!doctype html>
+ <html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Escriba 0.2</title>
+        <meta name="description" content="A hassle-free and drop-dead pretty text editor for the web. Your document is saved to your browser's local storage and you can even save
+        it to your Dropbox.">
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Ricardo Magalhães (@magalhini)">
+        <!-- For third-generation iPad with high-resolution Retina display: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+
+        <!-- For iPhone with high-resolution Retina display: -->
+
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+
+        <!-- For first- and second-generation iPad: -->
+
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/keyframes.css">
+        <link rel="stylesheet" href="styles/fontface.css">
+        <link rel="stylesheet" href="styles/themes.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="options">
+                <div class="about">
+                    <p>about</p>
+                    <div class="info hide">
+                        Escriba is a one-day project built by <a href="http://www.ricardofilipe.com">this guy</a> that aims
+                        to be a pretty place for your writings. Your text is saved locally
+                        in your browser as you type it, so as long as you don't clean your cache
+                        it will remain there. You can print it beautifully or save it to Dropbox. Isn't that wonderful?
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <ul class="block">
+                        <li class="icon-paragraph-left" title="Align left" data-action="left"></li>
+                        <li class="icon-paragraph-center" title="Align center" data-action="center"></li>
+                        <li class="icon-paragraph-right" title="Align right" data-action="right"></li>
+                    </ul>
+                    <ul class="block-right">
+                        <li class="icon-print" title="Print" data-action="print"></li>
+                        <li class="icon-contrast" title="Switch theme" data-action="contrast"></li>
+                        <li class="icon-download" title="Save as Dropbox file" data-action="dropbox"></li>
+                    </ul>
+                </div>
+            </div>
+            <input type="text" class="title" value="" placeholder="A title">
+            <div class="writing wrapper">
+                <textarea name="" class="editable" spellcheck="false" placeholder="Write as if you were water flowing." autofocus>
+                </textarea>
+                <div class="printing"></div>
+            </div>
+            <div class="status-bar off">Saved to Dropbox!</div>
+        </div>
+
+        <!-- build:js scripts/main.js -->
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+        <!-- endbuild -->
+
+        <script type="text/javascript" src="//use.typekit.net/ita0xye.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript" src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-41481871-2', 'escriba.co');
+          ga('send', 'pageview');
+
+        </script>
+</body>
+</html>
