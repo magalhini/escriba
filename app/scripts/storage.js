@@ -6,8 +6,8 @@ define([],
 
         var storageApi = {
             checkStorage: function () {
-                this.storage = window.localStorage ? window.localStorage : null;
-                return window.localStorage ? true : false;
+                this.storage = window.localStorage || null;
+                return !!window.localStorage;
             },
 
             erase: function (key) {
