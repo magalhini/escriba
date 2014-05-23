@@ -1,6 +1,6 @@
 /*global define */
-define(['app', 'jquery', 'storage', 'options'],
-    function (app, $, storage, options) {
+define(['app', 'jquery', 'storage', 'options', 'markdown'],
+    function (app, $, storage, options, markdown) {
 
         'use strict';
 
@@ -49,6 +49,12 @@ define(['app', 'jquery', 'storage', 'options'],
 
             // Hide bar after a while, but show on mousemove/touch.
             $('body').on('mousemove ontouchstart', hideOnDeadMouse);
+
+            var markdownEditor = new Editor(input[0], $('.preview')[0]);
+
+            input.on('keyup', function () {
+                markdownEditor.update();
+            });
 
             // Map options to actions.
             optionsEl.on('click li', function (el) {
@@ -148,6 +154,7 @@ define(['app', 'jquery', 'storage', 'options'],
          */
         function updateHidden(text) {
             hiddenEl[0].innerHTML = text.replace(/\n/g, '<p>');
+            hiddenEl[0].innerHTML = markdown.toHTML(text);
         }
 
         /**
@@ -166,4 +173,13 @@ define(['app', 'jquery', 'storage', 'options'],
                 el.fadeOut(toggle);
             }
         }
+
+        function Editor(input, preview) {
+            this.update = function () {
+                preview.innerHTML = markdown.toHTML(input.value);
+            };
+
+            input.editor = this;
+            this.update();
+        };
 });

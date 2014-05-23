@@ -27,3 +27,9 @@ body.dark {
 .dark .options .selected {
     color: #fff;
 }
+
+.monospace {
+    font-family: 'courier-prime', monospace;
+    font-size: 1.4em;
+    line-height: 1.8;
+}

@@ -7,6 +7,7 @@ define([],
         var options = {
             init: function (element) {
                 this._element = element;
+                this._markdown = false;
                 this._body = $('body');
                 this._optionsBar = $('.options');
             },
@@ -30,6 +31,12 @@ define([],
                 case 'contrast':
                     this.toggleTheme();
                     break;
+                case 'markdown':
+                    this.enableMarkdown();
+                    break;
+                case 'monospace':
+                    this.toggleMonospace();
+                    break;
                 }
             },
 
@@ -48,6 +55,10 @@ define([],
             print: function () {
                 window.print();
                 return this;
+            },
+
+            enableMarkdown: function () {
+                this._markdown = !this._markdown;
             },
 
             toggleTheme: function () {
@@ -74,6 +85,10 @@ define([],
 
             showBar: function () {
                 this._optionsBar.removeClass('closed');
+            },
+
+            toggleMonospace: function () {
+                this._element.toggleClass('monospace');
             }
         };
 

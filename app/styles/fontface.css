@@ -19,6 +19,11 @@
     -webkit-font-smoothing: antialiased;
 }
 
+.icon-monospace {
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
 .icon-file, .icon-libreoffice,
 .icon-paragraph-left,
 .icon-paragraph-center,
