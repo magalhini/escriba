@@ -33,3 +33,7 @@ body.dark {
     font-size: 1.4em;
     line-height: 1.8;
 }
+
+.monospace.title {
+    font-size: 1.7em;
+}

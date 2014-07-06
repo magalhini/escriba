@@ -5,7 +5,8 @@ define([],
         'use strict';
 
         var options = {
-            init: function (element) {
+            init: function (title, element) {
+                this._title = title;
                 this._element = element;
                 this._markdown = false;
                 this._body = $('body');
@@ -88,6 +89,7 @@ define([],
             },
 
             toggleMonospace: function () {
+                this._title.toggleClass('monospace');
                 this._element.toggleClass('monospace');
             }
         };
