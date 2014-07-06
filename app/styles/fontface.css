@@ -9,14 +9,18 @@
     font-style: normal;
 }
 
-[data-icon]:before {
+[class^="icon-"], [class*=" icon-"] {
     font-family: 'icomoon';
-    content: attr(data-icon);
+    speak: none;
+    font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+
+    /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-monospace {
@@ -24,10 +28,11 @@
     font-size: 1.2em;
 }
 
-.icon-file, .icon-libreoffice,
+.icon-file, .icon-lefttoright,
 .icon-paragraph-left,
+.icon-eye,
 .icon-paragraph-center,
-.icon-paragraph-right,
+.icon-cog,
 .icon-print,
 .icon-download,
 .icon-contrast {
@@ -38,13 +43,26 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
 }
-.icon-file:before { content: "\21"; }
-.icon-libreoffice:before { content: "\22"; }
-.icon-paragraph-left:before { content: "\23"; }
-.icon-paragraph-center:before { content: "\24"; }
-.icon-paragraph-right:before { content: "\25"; }
-.icon-print:before { content: "\26"; }
-.icon-contrast:before { content: "\27"; }
-.icon-download:before { content: "\28"; }
+
+.icon-lefttoright:before {
+    content: "\e606";
+}
+.icon-print:before {
+    content: "\e600";
+}
+.icon-cog:before {
+    content: "\e601";
+}
+.icon-download:before {
+    content: "\e602";
+}
+.icon-eye:before {
+    content: "\e603";
+}
+.icon-contrast:before {
+    content: "\e604";
+}
+.icon-paragraph-center:before {
+    content: "\e605";
+}

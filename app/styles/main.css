@@ -120,6 +120,11 @@ textarea {
     height: 2.5em;
 }
 
+.options .icon-lefttoright {
+    font-size: .8em;
+    margin: .45em 3em 0 0;
+}
+
 .options li:hover,
 .options .selected {
     color: #333;
@@ -136,7 +141,7 @@ textarea {
     display: block;
     width: 100%;
     font-size: 1.7em;
-    margin: 1em auto -.5em;
+    margin: 1em auto 0;
     background: transparent;
     border: none;
     text-align: center;
@@ -179,7 +184,23 @@ textarea {
 }
 
 .preview {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    padding: 0 15% 5em;
+    font-size: 1.4em;
+    margin: 1.2em 0 0 2em;
+    line-height: 1.5;
+    background: #f9f9f9;
+    min-width: 100%;
+    overflow: scroll;
+    z-index: 5;
+    height: 100%;
+}
+
+.preview.open {
+    opacity: 1;
+    visibility: visible;
 }
 
 .hide-gradient .writing:after {
@@ -239,11 +260,20 @@ textarea {
     display: none;
 }
 
+.a-right {
+    text-align: center;
+}
+
+.rtl {
+    direction: rtl;
+}
+
 /* Animations */
 
 .editable,
 .title,
 .options,
+.preview,
 body {
     -webkit-transition: color .65s ease-in-out 0s,
                         background .65s ease-in-out 0s,
@@ -285,6 +315,8 @@ body {
 
 @media all and (max-width: 950px) {
     .options li { margin: .27em 1em 0 0; }
+
+    .preview {font-size: 1em;}
 }
 
 @media all and (max-width: 650px) {

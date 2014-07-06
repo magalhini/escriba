@@ -9,8 +9,8 @@ require.config({
         'markdown': {
             exports: 'markdown'
         }
-    },
-    urlArgs: + new Date()
+    }/*,
+    urlArgs: + new Date()*/
 });
 
 require(['app'], function () {

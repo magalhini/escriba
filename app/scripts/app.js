@@ -14,7 +14,8 @@ define(['app', 'jquery', 'storage', 'options', 'markdown'],
             deadMouse   = null,
             timeToSave  = 500,
             dropBox     = null,
-            timer       = null;
+            timer       = null,
+            markdownEditor = null;
 
         initializeApp();
 
@@ -50,7 +51,7 @@ define(['app', 'jquery', 'storage', 'options', 'markdown'],
             // Hide bar after a while, but show on mousemove/touch.
             $('body').on('mousemove ontouchstart', hideOnDeadMouse);
 
-            var markdownEditor = new Editor(input[0], $('.preview')[0]);
+            markdownEditor = new Editor(input[0], $('.preview')[0]);
 
             input.on('keyup', function () {
                 markdownEditor.update();
@@ -104,8 +105,6 @@ define(['app', 'jquery', 'storage', 'options', 'markdown'],
          *
          */
         function saveToStorage () {
-            console.log('Saving to storage...');
-
             var text = input.val(),
                 title = titleEl.val();
 
@@ -155,6 +154,7 @@ define(['app', 'jquery', 'storage', 'options', 'markdown'],
         function updateHidden(text) {
             hiddenEl[0].innerHTML = text.replace(/\n/g, '<p>');
             hiddenEl[0].innerHTML = markdown.toHTML(text);
+            markdownEditor.update();
         }
 
         /**

@@ -11,29 +11,27 @@ define([],
                 this._markdown = false;
                 this._body = $('body');
                 this._optionsBar = $('.options');
+                this._preview = $('.preview');
             },
 
             run: function (element) {
                 var action = element.data('action');
 
                 switch (action) {
-                case 'left':
-                    this.alignLeft();
+                case 'write-direction':
+                    this.writeDirection();
                     break;
                 case 'center':
                     this.alignCenter();
                     break;
-                case 'right':
-                    this.alignRight();
+                case 'preview':
+                    this.preview(element);
                     break;
                 case 'print':
-                    this.print();
+                    this.printDoc();
                     break;
                 case 'contrast':
                     this.toggleTheme();
-                    break;
-                case 'markdown':
-                    this.enableMarkdown();
                     break;
                 case 'monospace':
                     this.toggleMonospace();
@@ -41,25 +39,22 @@ define([],
                 }
             },
 
-            alignLeft: function () {
-                this._element.css('text-align', 'left');
+            writeDirection: function () {
+                this._element.toggleClass('rtl');
             },
 
             alignCenter: function () {
-                this._element.css('text-align', 'center');
+                this._element.toggleClass('a-right');
             },
 
-            alignRight: function () {
-                this._element.css('text-align', 'right');
+            preview: function (element) {
+                this._preview.toggleClass('open');
+                element.toggleClass('selected');
             },
 
-            print: function () {
+            printDoc: function () {
                 window.print();
                 return this;
-            },
-
-            enableMarkdown: function () {
-                this._markdown = !this._markdown;
             },
 
             toggleTheme: function () {
