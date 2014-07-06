@@ -40,7 +40,7 @@ define(['app', 'jquery', 'storage', 'options', 'markdown'],
          */
         function addEvents (el) {
             // Tell options where is the input to read from.
-            options.init(input);
+            options.init(titleEl, input);
 
             // Resize textarea and save on keyup.
             $(window).on('resize', findHeight);
