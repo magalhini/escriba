@@ -187,9 +187,10 @@ textarea {
     opacity: 0;
     visibility: hidden;
     position: fixed;
+    left: 0;
     padding: 0 15% 5em;
     font-size: 1.4em;
-    margin: 1.2em 0 0 2em;
+    margin: 1.2em 0 0;
     line-height: 1.5;
     background: #f9f9f9;
     min-width: 100%;
